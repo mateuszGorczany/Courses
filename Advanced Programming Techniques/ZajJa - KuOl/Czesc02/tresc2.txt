@@ -1,0 +1,12 @@
+Część 2 polega na napisaniu własnego kontenera (wraz z iteratorem),
+w tym przypadku mapy z wykorzystaniem std::allocator.
+
+Rozwiązanie powinno się znajdować w pliku myMap.h, ew. także w innych plikach, ale pliku zad.cpp nie zmieniamy.
+
+Mapa powinna mieć przynajmniej tyle metod aby program się poprawnie kompilował (nie trzeba zapewniać wszystkich funkcji oferowanych przez std::map) i dawał poprawne wyjście, czyli takie same jak dla std::map i std::unordered_map.
+Trzeba też pamiętać aby nie było wycieków pamięci (make check -> CMakeLists.txt).
+
+Dodatkowo implementacja mapy jako drzewa BST lub przy użyciu tablicy haszującej nie jest konieczna.
+Można to zrobić dowolnie, najważniejsze jest poprawne działanie programu.
+Czas działania nie jest oceniany (choć dobrze żeby nie przekraczał kilku minut), ale rozwiązania zostaną
+przetestowane i to działające najszybciej zostanie wyróżnione :)

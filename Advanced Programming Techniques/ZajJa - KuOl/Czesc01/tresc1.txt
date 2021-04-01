@@ -1,0 +1,43 @@
+W każdym zadaniu używaj o ile to możliwe funkcji pomocniczych iteratorów.
+
+//1
+Napisz program przechowujący miasta i ich zabytki w jednym jednowymiarowym kontenerze. 
+Program ma posiadać:
+- funkcję wypisującą posortowaną listę miast w kolejności alfabetycznej od tyłu
+- funkcję wypisującą zabytki danego miasta
+- funkcję wypisującą liczbę zabytków w danym mieście
+
+//2
+Napisz program stosując odpowiedni kontener, aby uzyskać podane wyjście.
+Każda zmiana w kontenerach ma być wykonana przy użyciu jednej metody kontenera.
+
+Wyjście:
+K1: 111/222/333/444/555/
+K2: 100/200/300/
+
+K1: 111/222/333/666/444/555/
+
+K1: 111/777/222/333/666/444/555/
+
+K1: 111/777/222/333/666/555/
+
+K1: 111/777/222/333/666/100/200/300/555/
+K2:
+
+K1: 555/300/200/100/666/333/222/777/111/
+
+//3
+Zastosuj odpowiedni kontener i jego metody, aby wyjście było takie samo, jak podane na końcu pliku main03.cpp
+
+
+//4
+Zastosuj odpowiedni kontener, w którym mają być przechowywane elementy (char, int) sortowane tak, aby char były alfabetycznie, a jeśli są równe to o kolejności decyduje int (malejąco). Wypełnij kontener, wypisz i usuń wszystkie elementy.
+
+//5
+Napisz program dający podany wynik używając tylko adaptorów iteratorów i jednego rodzaju kontenera (nie używaj metod kontenera oprócz konstruktora, begin, end itp). 
+
+Wyjscie:
+9 8 7 1 2 3 4 5 6 
+9 8 7 1 2 3 4 5 6 10 11 12 
+9 8 7 1 2 3 4 13 14 15 5 6 10 11 12 
+9 8 18 17 16 3 4 13 14 15 5 6 10 11 12
