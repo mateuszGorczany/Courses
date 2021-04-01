@@ -1,3 +1,3 @@
-![alt text](Numerical Methods/Lab3/zad1.png)
-![alt text](Numerical Methods/Lab3/zad2.png)
-![alt text](Numerical Methods/Lab3/zad3.png)
+![alt text](https://github.com/mateuszGorczany/Courses/blob/387a21460017e9b6ce4e380c4b515b0feb630411/Numerical%20Methods/Lab3/zad1.png)
+![alt text](https://github.com/mateuszGorczany/Courses/blob/387a21460017e9b6ce4e380c4b515b0feb630411/Numerical%20Methods/Lab3/zad1.png)
+![alt text](https://github.com/mateuszGorczany/Courses/blob/387a21460017e9b6ce4e380c4b515b0feb630411/Numerical%20Methods/Lab3/zad1.png)
