@@ -1,0 +1,60 @@
+WITH MEMBER [Measures].[Status] AS
+Case
+When KpiValue( "KPI Internet Profit" ) / KpiGoal( "KPI Internet Profit" ) > 1
+Then 1
+When KpiValue( "KPI Internet Profit" ) / KpiGoal( "KPI Internet Profit" ) <= 1
+And
+KpiValue( "KPI Internet Profit" ) / KpiGoal( "KPI Internet Profit" ) >= .5
+Then 0
+Else -1
+End
+MEMBER [Measures].[Value] AS
+[Measures].[Internet Sales Amount] - [Measures].[Internet Total Product Cost]
+MEMBER [Measures].[Goal] AS
+Case
+When IsEmpty
+(
+ParallelPeriod
+(
+[Date].[Calendar Year].[Calendar Year],
+1,
+[Date].[Calendar Year].CurrentMember
+)
+)
+Then [Measures].[Internet Sales Amount] - [Measures].[Internet Total Product Cost]
+Else 1.10 *(
+([Measures].[Internet Sales Amount] 
+- 
+[Measures].[Internet Total Product Cost]),
+ParallelPeriod
+(
+[Date].[Calendar Year].[Calendar Year],
+1,
+[Date].[Calendar Year]
+)
+)
+End
+MEMBER [Measures].[Trend] AS
+Case
+When IsEmpty(ParallelPeriod([Date].[Calendar Year].[Calendar Year],
+1, [Date].[Calendar Year]))
+Then 0
+When ([Measures].[Internet Sales Amount] - [Measures].[Internet Total Product Cost])
+>
+(ParallelPeriod([Date].[Calendar Year].[Calendar Year],
+1, [Date].[Calendar Year]), ([Measures].[Internet Sales Amount] -
+[Measures].[Internet Total Product Cost])
+)
+Then 1
+When ([Measures].[Internet Sales Amount] - [Measures].[Internet Total Product Cost])
+=
+(ParallelPeriod([Date].[Calendar Year].[Calendar Year],
+1, [Date].[Calendar Year]), ([Measures].[Internet Sales Amount] -
+[Measures].[Internet Total Product Cost])
+)
+Then 0
+Else -1
+End
+SELECT Calendar.[Calendar Year].MEMBERS ON 0,
+{[Measures].[Value], [Measures].[Goal], [Measures].[Status], [Measures].[Trend]} ON 1
+FROM [Adventure Works]

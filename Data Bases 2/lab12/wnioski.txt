@@ -1,0 +1,3 @@
+Query nie dawało poprawnego wyniku, gdyż pojawiały się błędy związane z wartością części wyrażenia:
+[Measures].[Internet Sales Amount] - [Measures].[Internet Total Product Cost] - dokładnie z tą częścią
+
