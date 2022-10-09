@@ -1,0 +1,47 @@
+[System]
+Name='fis2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='poziom_stresu'
+Range=[0 100]
+NumMFs=5
+MF1='maly':'trimf',[-41.7 0 20.5102040816327]
+MF2='sredni':'trimf',[30 45 60]
+MF3='duzy':'trimf',[50 65 80]
+MF4='maly_bigger':'trimf',[10.3 25.8163265306122 40.9]
+MF5='duzy_bigger':'trimf',[70 100 142]
+
+[Input2]
+Name='przespane_godziny'
+Range=[0 12]
+NumMFs=5
+MF1='b_malo':'trimf',[-5 0 3]
+MF2='srednio':'trimf',[4 6 8]
+MF3='b_duzo':'trimf',[9 12 17]
+MF4='malo':'trimf',[2 4 6]
+MF5='rr':'trimf',[7 9 11]
+
+[Output1]
+Name='wydajnosc'
+Range=[0 100]
+NumMFs=5
+MF1='mala':'trimf',[20 35 50]
+MF2='srednia':'trimf',[40 55 70]
+MF3='duza':'trimf',[80.1020408163265 100 142]
+MF4='b_mala':'trimf',[0 15.2040816326531 29.9]
+MF5='bigger_srednia':'trimf',[60 75 90]
+
+[Rules]
+5 1, 4 (1) : 2
+5 1, 4 (1) : 1
+5 1, 4 (1) : 1

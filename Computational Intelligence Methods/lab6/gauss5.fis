@@ -1,0 +1,49 @@
+[System]
+Name='gauss5'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='poziom_stresu'
+Range=[0 100]
+NumMFs=5
+MF1='maly':'gaussmf',[9.61 -1.059]
+MF2='sredni':'gaussmf',[6.37 45]
+MF3='duzy':'gaussmf',[6.37 65]
+MF4='maly_bigger':'gaussmf',[6.424 25.79]
+MF5='duzy_bigger':'gaussmf',[17.33 100.6]
+
+[Input2]
+Name='przespane_godziny'
+Range=[0 12]
+NumMFs=5
+MF1='b_malo':'gaussmf',[1.359 -0.1]
+MF2='srednio':'gaussmf',[0.8493 6]
+MF3='b_duzo':'gaussmf',[2.038 12.1]
+MF4='malo':'gaussmf',[0.8493 4]
+MF5='duzo':'gaussmf',[0.8493 9]
+
+[Output1]
+Name='wydajnosc'
+Range=[0 100]
+NumMFs=5
+MF1='mala':'gaussmf',[6.37 35]
+MF2='srednia':'gaussmf',[6.37 55]
+MF3='duza':'gaussmf',[16.9 101.1]
+MF4='b_mala':'gaussmf',[6.262 15.18]
+MF5='bigger_srednia':'gaussmf',[6.37 75]
+
+[Rules]
+5 1, 4 (1) : 1
+3 4, 1 (1) : 1
+2 2, 2 (1) : 1
+1 3, 3 (1) : 1
+4 5, 5 (1) : 1
