@@ -1,0 +1,2 @@
+Wartości są takie same, więc wynik wygląda na poprawny.
+
